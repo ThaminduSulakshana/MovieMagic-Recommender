@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Movie Recommendation System</title>
+</head>
+<body>
+
+<div class="container">
+    <h1>Movie Recommendation System</h1>
+
+    <div class="search-container">
+        <form id="searchForm">
+            <input type="text" id="movie_title" placeholder="Enter Movie Name">
+            <button type="button" onclick="searchMovies()">Get Recommendations</button>
+        </form>
+    </div>
+
+    <div class="results-container" id="resultsContainer">
+        {% if recommendations %}
+        <h2 class="mt-4">Recommended Movies:</h2>
+        <ul class="list-group">
+            {% for movie in recommendations %}
+                <li class="list-group-item">{{ movie }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    </div>
+</div>
+</body>
+</html>
